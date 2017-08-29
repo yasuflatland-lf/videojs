@@ -1,0 +1,6 @@
+Bundle-Description: Loads videojs globally
+Bundle-Version: 1.0.0
+Web-ContextPath: /videojs-hook
+-sources: true
+-metatype: *
+-dsannotations-options: inherit

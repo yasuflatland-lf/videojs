@@ -1,0 +1,5 @@
+Bundle-Name: videojs-web
+Bundle-SymbolicName: com.liferay.videojs
+Bundle-Version: 1.0.0
+-metatype: *
+-dsannotations-options: inherit
