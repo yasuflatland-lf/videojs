@@ -23,6 +23,10 @@ This sample shows how to display streaming on Liferay 7 / DXP from HTTP Streamin
 ## How to set up your own streaming server quick
 1. Clone the following repository ```git clone https://github.com/brocaar/nginx-rtmp-dockerfile```
 2. Run ```docker build -t nginx_rtmp .``` to initialize the docker instance and then run ```docker run -p 1935:1935 -p 8080:80 --rm nginx_rtmp``` 
+3. Download streaming client, [Open Broadcaster Software](https://obsproject.com/) and set up streaming.
+4. Start up OBS and navigate to Streaming pane on left, then set URL ```rtmp://your-server-ip-is-here:1935/encoder/``` and Stream key as ```live``` for example.
+5. On Liferay, navigate to configration of Videojs Portlet and set the URL as ```rtmp://your-server-ip-is-here:1935/encoder/live.m3u8```
+6. The live stream should be displayed.
 
 If you run this docker on the same machine, please make sure to change the port for Liferay. In case of tomcat Liferay bundle, go to ```${tomcat_home}/conf/Catalina/server.xml``` and change following part to appropriate port number from 8080 to 9090 for example.
 ```server.xml
@@ -30,8 +34,5 @@ If you run this docker on the same machine, please make sure to change the port 
                connectionTimeout="20000"
                redirectPort="8443" URIEncoding="UTF-8" />
 ```
-
 ## Bug report
 Please create an issue on this repository.
-
-
